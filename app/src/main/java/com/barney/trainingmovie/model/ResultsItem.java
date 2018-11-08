@@ -99,7 +99,7 @@ public class ResultsItem{
 		this.posterPath = posterPath;
 	}
 
-	public int getPosterPath(){
+	public String getPosterPath(){
 		return posterPath;
 	}
 

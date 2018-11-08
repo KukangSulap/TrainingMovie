@@ -2,6 +2,7 @@ package com.barney.trainingmovie.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -48,17 +49,13 @@ public class MainActivity extends AppCompatActivity {
 //               Log.d(" ", "onResponse data: " + responseMovie);
                     CustomAdapter adapter = new CustomAdapter(responseMovie, MainActivity.this);
                     rvMovie.setAdapter(adapter);
-                    rvMovie.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+//                    rvMovie.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                    rvMovie.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
                 }
                 else{
                     Toast.makeText(MainActivity.this, response.message(), Toast.LENGTH_SHORT).show();
                 }
-
-
-
-
             }
-
 
             @Override
             public void onFailure(Call<ResponseMovie> call, Throwable t) {
